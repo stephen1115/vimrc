@@ -1,0 +1,38 @@
+[MacVim 使用筆記]
+1. MacVim下載網址
+   http://code.google.com/p/macvim/
+
+2. 下載了MacVim的壓縮檔，解壓縮之後會有三個檔案
+   2.1. 將MacVim.app 放到/Applications 目錄下
+   
+   2.2. 將script file, mvim，複製到 /usr/bin 目錄下(/usr/bin 是個隱藏目錄)
+        $ sudo cp -f mvim /usr/bin
+        這樣之後便可以在終端機中直接使用mvim
+
+   2.3. README.txt 可以刪掉
+
+3. MacVim環境變數說明
+   3.1. 於vim的命令列中輸入 :version，可以查詢系統中vimrc 檔案的位置
+        system vimrc file: "$VIM/vimrc" <== vimrc 系統配置文件的位置
+        user vimrc file: "$HOME/.vimrc" <== vimrc 使用者帳號配置文件的位置
+        而使用者帳號配置文件的內容會覆蓋系統配置文件的內容，
+        所以只需編輯使用者帳號配置文件即可
+   
+   3.2. 於vim的命令列中輸入
+        :echo $VIM  <== 可以查看$VIM 是指哪一個目錄
+        :echo $HOME <== 可以查看$HOME 是指哪一個目錄
+
+[Vim的文字replace]
+將所有的AAA取代成BBB，
+    :%s/AAA/BBB/g
+    『﹪』<== 代表操作整個檔案
+
+    :10,20s/AAA/BBB/g
+    『10,20』<== 代表只針對第10行到第20行進行取代
+
+[MAC Terminal Tab 切換]
+在 Termial Menu bar 的 Window 有提示切換 Tab 的快捷鍵是「⌘ + {」,「⌘ + }」，
+但是真正使用必需多按 shift 鍵。
+
+shift + ⌘ + [：左移一個 Tab
+shift + ⌘ + ]：右移一個 Tab
